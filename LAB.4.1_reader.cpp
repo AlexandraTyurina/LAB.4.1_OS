@@ -52,7 +52,7 @@ int main() {
 		ReleaseSemaphore(Semaph, 1, NULL);
 		cout << (int)buffAddress + currentPage * sizeOfPage << " " << currentPage <<endl;
 		memcpy(message, (void*)((int)buffAddress + currentPage * sizeOfPage),sizeOfPage);
-		Sleep(400 + rand() % 800);
+		Sleep(500 + rand() % 1000);
 		WaitForSingleObject(Semaph, INFINITE);
 		journal << GetCurrentProcessId() << ' ' << timeGetTime() << " Прекращение чтения " << currentPage << endl;
 		ReleaseSemaphore(Semaph, 1, NULL);
