@@ -54,7 +54,7 @@ int main() {
 			endl;
 		memcpy((void*)((int)buffAddress + currentPage * sizeOfPage), message,
 			sizeOfPage);
-		Sleep(400 + rand() % 8000);
+		Sleep(500 + rand() % 1000);
 		WaitForSingleObject(Semaph, INFINITE);
 		journal << GetCurrentProcessId() << ' ' << timeGetTime() << " Прекращение записи " << currentPage << endl;
 		ReleaseSemaphore(Semaph, 1, NULL);
